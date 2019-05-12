@@ -1,0 +1,64 @@
+.page-archive {
+   .main {
+    padding-bottom: 150px;
+    margin-top: 0px;
+    background-image:url("https://blogimage-1258928558.cos.ap-guangzhou.myqcloud.com/backgroundimage/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+        background-repeat:no-repeat;
+	}
+ 	.site-meta .site-title{
+	   color:#fff;
+	}
+	.main-inner{
+		margin-top: 0px;
+	}
+	body {
+		background-image: unset;
+		background-attachment: fixed;
+		background-size: 100%;
+		/*background-position: top left;*/
+	}
+	.header{
+		background: rgba(28, 25, 25, 0.6);
+		border-bottom: unset;
+	}
+	.menu .menu-item a{
+		font-weight: 300;
+	    		color: #e6eaed;
+	}
+  .archive-page-counter {
+    position: relative;
+    top: 3px;
+    left: 20px;
+
+    +mobile() {
+      top: 5px;
+    }
+  }
+  
+  .content{
+    background:#fff;
+  }
+  
+  .posts-collapse {
+
+    .archive-move-on {
+      position: absolute;
+      top: 11px;
+      left: 0;
+      margin-left: -6px;
+      width: 10px;
+      height: 10px;
+      opacity: 0.5;
+      background: $black-light;
+      border: 1px solid white;
+
+      circle();
+    }
+  }
+
+  .footer{
+	background-color: #12121200 !important;
+  }
+}
