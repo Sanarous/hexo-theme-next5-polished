@@ -1,13 +1,11 @@
 # 基于Next5主题的一款美化的hexo博客主题
-![](https://img.shields.io/badge/Next-5.1.4-green.svg)
-
-![](https://img.shields.io/badge/hexo--douban-1.3.3-orange.svg)
+![](https://img.shields.io/badge/Next-5.1.4-green.svg) ![](https://img.shields.io/badge/hexo--douban-1.3.3-orange.svg)
 
 ![](https://blogimage-1258928558.cos.ap-guangzhou.myqcloud.com/github/hexo-themes-next5-polished/index.png)
 
 效果预览地址：https://bestzuo.cn
 
-⚠️注意不能保证网站的样式与本仓库中样式一致，如果你会修改css样式的话，可以继续在此基础上魔改next主题。
+⚠️ 注意并不能保证网站的样式与本仓库中样式一致，如果你会修改css样式的话，可以继续在此基础上魔改next主题。
 
 ### 使用方法
 
@@ -41,6 +39,8 @@ git clone https://github.com/Sanarous/hexo-theme-next5-polished.git /themes/hexo
 "hexo-wordcount": "^6.0.1",  //Next5主题字数统计，忘了我用的哪一个，所以都安装一下吧 - -
 ```
 
+如果你忘了是否安装过这些插件的话，可以打开hexo目录下的`hexo/package.json`文件，核对一下对应上面的插件名称即可。
+
 具体安装上述插件方式：
 
 在GitBash中cd到站点根目录下，使用`npm install hexo-abbrlink --save`命令即可，所有插件安装方式都一样。
@@ -49,7 +49,7 @@ git clone https://github.com/Sanarous/hexo-theme-next5-polished.git /themes/hexo
 
 （1）**修改valine评论系统**
 
-具体方式，在主题目录下配置文件_config.xml中搜索`valine`，找到如下配置：
+具体方式，在主题配置文件`_config.xml`中搜索`valine`，找到如下配置：
 
 ```yml 文件位置：themes/hexo-themes-next5-polished/_config.xml
 valine:
@@ -77,7 +77,7 @@ leancloud_visitors:
   app_key: # 同上面valine的app_key
 ```
 
-其中的`app_id`和`app_key`同上面的`valine`下面的，然后需要注意一点的是，这个leanCloud统计文章阅读量需要在leanCloud的存储中新建Class，并且Class名称必须为`Counter`，数据条目设置为限制写入，即其他人可读、不可写。
+其中的`app_id`和`app_key`同上面的`valine`下面的，然后需要注意一点的是，这个leanCloud统计文章阅读量需要在leanCloud的存储中新建Class，并且Class名称必须为`Counter`，数据条目设置为限制写入，即其他人可读、不可写。具体使用方式请百度搜索，这里不再赘述。至于为什么不使用不蒜子统计文章阅读量。。主要是不蒜子统计不能进行后台管理呀。
 
 （3）暂时没想到
 
