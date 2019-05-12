@@ -1,5 +1,5 @@
 # 基于Next5主题的一款美化的hexo博客主题
-![](https://img.shields.io/badge/Next-5.1.4-green.svg) ![](https://img.shields.io/badge/hexo--douban-1.3.3-orange.svg)
+![](https://img.shields.io/badge/Next-5.1.4-green.svg) ![](https://img.shields.io/badge/hexo--douban-1.3.3-orange.svg) ![](https://img.shields.io/badge/hexo-abbrink-2.0.5-yellow.svg) ![](https://img.shields.io/badge/hexo-generator-searchdb-1.0.8-blue.svg)
 
 效果预览地址：https://bestzuo.cn
 
@@ -83,6 +83,10 @@ leancloud_visitors:
 
 然后就可以使用hexo命令启动hexo博客查看效果啦！
 
-如果使用过程中发现问题，请提交一下issue以方便我修改，由于很多配置都是很久以前的，所以在记录这个的时候我并不一定都能想到 - - 希望能谅解一下。
+
+
+最后的最后：
+
+**如果使用过程中发现问题，请提交一下issue以方便我修改，由于很多配置都是很久以前的，所以在记录这个的时候我并不一定都能想到 - - 希望各位能谅解一下。**
 
 
