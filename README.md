@@ -1,8 +1,6 @@
 # 基于Next5主题的一款美化的hexo博客主题
 ![](https://img.shields.io/badge/Next-5.1.4-green.svg) ![](https://img.shields.io/badge/hexo--douban-1.3.3-orange.svg)
 
-![](https://blogimage-1258928558.cos.ap-guangzhou.myqcloud.com/github/hexo-themes-next5-polished/index.png)
-
 效果预览地址：https://bestzuo.cn
 
 ⚠️ 注意并不能保证网站的样式与本仓库中样式一致，如果你会修改css样式的话，可以继续在此基础上魔改next主题。
@@ -84,5 +82,7 @@ leancloud_visitors:
 ### 启动hexo博客
 
 然后就可以使用hexo命令启动hexo博客查看效果啦！
+
+如果使用过程中发现问题，请提交一下issue以方便我修改，由于很多配置都是很久以前的，所以在记录这个的时候我并不一定都能想到 - - 希望能谅解一下。
 
 
