@@ -45,7 +45,7 @@ git clone https://github.com/Sanarous/hexo-theme-next5-polished.git /themes/hexo
 
 #### 配置文件准备
 
-(1)**修改valine评论系统**
+- **修改valine评论系统**
 
 具体方式，在主题配置文件`_config.xml`中搜索`valine`，找到如下配置：
 
