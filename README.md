@@ -45,11 +45,11 @@ git clone https://github.com/Sanarous/hexo-theme-next5-polished.git /themes/hexo
 
 #### 配置文件准备
 
-- **修改valine评论系统**
+(1)**修改valine评论系统**
 
 具体方式，在主题配置文件`_config.xml`中搜索`valine`，找到如下配置：
 
-```yml 文件位置：themes/hexo-themes-next5-polished/_config.xml
+```yml
 valine:
   enable: true 
   appid:  # your leancloud application appid
@@ -72,7 +72,7 @@ valine:
 
 同上，在主题配置文件_config.xml中搜索`leanCloud_visitors`，找到如下配置：
 
-```yml 文件位置：themes/hexo-themes-next5-polished/_config.xml
+```yml
 leancloud_visitors:
   enable: true
   app_id: # 同上面valine的app_id
@@ -85,7 +85,7 @@ leancloud_visitors:
 
 完成主题配置文件后，我们还需要修改一下hexo站点根目录配置文件，以下附上我个人的_config.xml配置文件供参考：
 
-```yml 文件位置:hexo/_config.xml
+```yml
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
