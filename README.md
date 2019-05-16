@@ -64,9 +64,6 @@ valine:
 
 其中需要填写`appid`和`appkey`，这两个都在[leanCloud](https://leancloud.cn/)官网注册并获取即可，具体不再赘述，可以参考`valine`的官网。
 
-<a href="https://leancloud.cn/" target="_blank" class="LinkCard">LeanCloud官网</div>
-
-<a href="https://github.com/xCss/Valine" target="_blank" class="LinkCard">Valine官网</div>
 
 - **设置leanCloud_visitors**
 
