@@ -45,7 +45,7 @@ git clone https://github.com/Sanarous/hexo-theme-next5-polished.git /themes/hexo
 
 #### 配置文件准备
 
-（1）修改valine评论系统
+- **修改valine评论系统**
 
 具体方式，在主题配置文件`_config.xml`中搜索`valine`，找到如下配置：
 
@@ -62,13 +62,17 @@ valine:
   pageSize: 10 # pagination size
 ```
 
-其中需要填写`appid`和`appkey`，这两个都在[leanCloud](https://leancloud.cn/)官网注册并获取即可，具体不再赘述，可以参考`valine`的官网：https://github.com/xCss/Valine
+其中需要填写`appid`和`appkey`，这两个都在[leanCloud](https://leancloud.cn/)官网注册并获取即可，具体不再赘述，可以参考`valine`的官网。
 
-（2）设置leanCloud_visitors
+<a href="https://leancloud.cn/" target="_blank" class="LinkCard">LeanCloud官网</div>
+
+<a href="https://github.com/xCss/Valine" target="_blank" class="LinkCard">Valine官网</div>
+
+- **设置leanCloud_visitors**
 
 同上，在主题配置文件_config.xml中搜索`leanCloud_visitors`，找到如下配置：
 
-```yml
+```yml 文件位置：themes/hexo-themes-next5-polished/_config.xml
 leancloud_visitors:
   enable: true
   app_id: # 同上面valine的app_id
@@ -77,7 +81,155 @@ leancloud_visitors:
 
 其中的`app_id`和`app_key`同上面的`valine`下面的，然后需要注意一点的是，这个leanCloud统计文章阅读量需要在leanCloud的存储中新建Class，并且Class名称必须为`Counter`，数据条目设置为限制写入，即其他人可读、不可写。具体使用方式请百度搜索，这里不再赘述。至于为什么不使用不蒜子统计文章阅读量。。主要是不蒜子统计不能进行后台管理呀。
 
-（3）暂时没想到
+- hexo站点根目录下添加配置
+
+完成主题配置文件后，我们还需要修改一下hexo站点根目录配置文件，以下附上我个人的_config.xml配置文件供参考：
+
+```yml 文件位置:hexo/_config.xml
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 码农翻身Sanarous
+subtitle: 普通的开发者,热情的学习者
+description: 本站内容主要是热衷于分享一些Java学习知识点总结和笔记，以及分享一些博客搭建技巧，欢迎各位来访！
+keywords: 码农,码农翻身,码农翻身Sanarous,Sanarous,Java,Hexo,Next,个人博客,hexo博客
+author: Sanarous
+language: zh-Hans
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://bestzuo.cn
+root: /
+permalink: posts/:abbrlink.html
+permalink_defaults:
+
+# abbrlink config
+abbrlink:
+  alg: crc32  #support crc16(default) and crc32
+  rep: dec    #support dec(default) and hex
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 20
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: hexo-theme-next
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+#deploy:
+#  type: git
+#  repo: https://github.com/Sanarous/Sanarous.github.io
+#  branch: master
+deploy:
+    type: git
+    repo: https://github.com/Sanarous/Sanarous.github.io
+
+leancloud_counter_security:
+  enable_sync: true
+  app_id: 需要填写
+  app_key: 需要填写
+  username: <<your username>> # Will be asked while deploying if is left blank
+  password: <<your password>> # Recommmended to be left blank. Will be asked while deploying if is left blank
+
+# 豆瓣评书
+douban:
+  user: bestzuo
+  builtin: false
+  book:
+    title: '&nbsp;'
+    quote: '书读百遍，其义自见；非淡泊无以明志，非宁静无以致远。'
+  timeout: 10000
+  
+# hexo sitemap网站地图
+baidusitemap:
+    path: baidusitemap.xml
+sitemap:
+    path: sitemap.xml
+
+# hexo-neat
+# 博文压缩
+neat_enable: true
+# 压缩html
+neat_html:
+  enable: true
+# 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  exclude:
+    - '**/*.min.js' 
+    - '**/clicklove.js'
+    - '**/image.js' 
+    - '**/valine.js' 
+    - '**/linkcard.js' 
+    - '**/clicksocialvalue.js' 
+
+# rss
+plugins:
+    hexo-generator-feed
+    
+#Feed Atom
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+```
 
 ### 启动hexo博客
 
