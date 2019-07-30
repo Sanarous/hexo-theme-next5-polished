@@ -228,6 +228,33 @@ feed:
     limit: 20
 ```
 
+#### 其它需要修改的地方
+
+1. 新增友情链接页面
+
+使用`hexo n page "links"`创建 links 菜单，并打开`hexo/source/links/index.md`文件，在标题头中加入 type: "links"声明：
+```yml
+---
+title: 友情链接
+date: 2019-06-28 20:46:16
+type: "links"
+comments: false
+---
+```
+添加友链的方式在主题配置文件（next/_config.xml）最后，格式如下：
+```yml
+# 友情链接
+mylinks:
+  - nickname: # 昵称
+    avatar: # 头像地址
+    site: # 友链地址
+    info: # 友站描述
+
+  - nickname:  
+    avatar: 
+    site: 
+    info: 
+```
 ### 启动hexo博客
 
 然后就可以使用hexo命令启动hexo博客查看效果啦！
