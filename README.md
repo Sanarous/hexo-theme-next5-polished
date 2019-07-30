@@ -7,19 +7,19 @@
 
 ### 使用方法
 
-使用GitBash，进入到本地`hexo`目录，使用以下命令
+使用 GitBash，进入到本地 hexo 根目录，使用以下命令
 
 ```shell
 git clone https://github.com/Sanarous/hexo-theme-next5-polished.git /themes/hexo-themes-next5-polished
 ```
 
-其中`hexo-themes-next5-polished`名称可以任取，只要放到`hexo`下的`themes`主题下即可。
+其中`hexo-themes-next5-polished`名称可以任取，只要放到 hexo 下的 themes 主题下即可。
 
 ### 使用前环境准备
 
 #### 插件准备
 
-由于主题中集成了很多插件，所以为了保证博客样式的完整性，在使用之前，需要先确保你的hexo博客已经安装过如下插件：
+由于主题中集成了很多插件，所以为了保证博客样式的完整性，在使用之前，需要先确保你的 hexo 博客已经安装过如下插件：
 
 ```html
 "hexo-abbrlink": "^2.0.5",  //生成文章唯一路径
@@ -37,11 +37,11 @@ git clone https://github.com/Sanarous/hexo-theme-next5-polished.git /themes/hexo
 "hexo-wordcount": "^6.0.1",  //Next5主题字数统计，忘了我用的哪一个，所以都安装一下吧 - -
 ```
 
-如果你忘了是否安装过这些插件的话，可以打开hexo目录下的`hexo/package.json`文件，核对一下对应上面的插件名称即可。
+如果你忘了是否安装过这些插件的话，可以打开 hexo 目录下的`hexo/package.json`文件，核对一下对应上面的插件名称即可。
 
 具体安装上述插件方式：
 
-在GitBash中cd到站点根目录下，使用`npm install hexo-abbrlink --save`命令即可，所有插件安装方式都一样。
+在 GitBash 中 cd 到站点根目录下，使用`npm install hexo-abbrlink --save`命令即可，所有插件安装方式都一样。
 
 #### 配置文件准备
 
@@ -76,11 +76,11 @@ leancloud_visitors:
   app_key: # 同上面valine的app_key
 ```
 
-其中的`app_id`和`app_key`同上面的`valine`下面的，然后需要注意一点的是，这个leanCloud统计文章阅读量需要在leanCloud的存储中新建Class，并且Class名称必须为`Counter`，数据条目设置为限制写入，即其他人可读、不可写。具体使用方式请百度搜索，这里不再赘述。至于为什么不使用不蒜子统计文章阅读量。。主要是不蒜子统计不能进行后台管理呀。
+其中的`app_id`和`app_key`同上面的`valine`下面的，然后需要注意一点的是，这个 leanCloud 统计文章阅读量需要在 leanCloud 的存储中新建Class，并且 Class 名称必须为`Counter`，数据条目设置为限制写入，即其他人可读、不可写。具体使用方式请百度搜索，这里不再赘述。至于为什么不使用不蒜子统计文章阅读量。。主要是不蒜子统计不能进行后台管理呀。
 
-- hexo站点根目录下添加配置
+- hexo 站点根目录下添加配置
 
-完成主题配置文件后，我们还需要修改一下hexo站点根目录配置文件，以下附上我个人的_config.xml配置文件供参考：
+完成主题配置文件后，我们还需要修改一下 hexo 站点根目录配置文件，以下附上我个人的 _config.xml 配置文件供参考：
 
 ```yml
 # Hexo Configuration
@@ -228,8 +228,8 @@ feed:
     limit: 20
 ```
 
-- 修改增强版valine部分地方
-打开`next/layout/_third-party/comments/valine.swig`文件，修改其中邮箱地址为你的valine评论的博主邮箱
+- 修改增强版 valine 部分地方
+打开`next/layout/_third-party/comments/valine.swig`文件，修改其中邮箱地址为你的 valine 评论的博主邮箱
 ```javascript
   <script type="text/javascript">
     new Valine({
@@ -273,7 +273,7 @@ mylinks:
 ```
 ### 启动hexo博客
 
-然后就可以使用hexo命令启动hexo博客查看效果啦！
+最后重新渲染博客就可以看到效果了！
 
 
 
