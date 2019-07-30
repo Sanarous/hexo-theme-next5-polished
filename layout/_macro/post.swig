@@ -61,20 +61,22 @@
         {% endif %}
 
         <div class="post-meta">
+      <!-- 增加置顶功能 -->
 	    {% if post.top %}
-		<font color=red>【置顶】</font>
+		      <font color=red>【置顶】</font>
 	        <span class="post-meta-divider">|</span>
-            {% endif %}
+      {% endif %}
           <span class="post-time">
             {% if theme.post_meta.created_at %}
               <span class="post-meta-item-icon">
-                <font color="blue"><i class="fa fa-calendar-o"></i></font>
+                <!-- 创建时间图标颜色 -->
+                <font color="blue"><i class="fa fa-calendar"></i></font>
               </span>
               {% if theme.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __('post.posted') }}</span>
               {% endif %}
               <time title="{{ __('post.created') }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">
-                {{ date(post.date, config.date_format) }}
+                <font color="blue">{{ date(post.date, config.date_format) }}</font>
               </time>
             {% endif %}
 
@@ -84,6 +86,7 @@
 
             {% if theme.post_meta.updated_at %}
               <span class="post-meta-item-icon">
+                 <!-- 更新时间图标颜色 -->
                  <font color="#40E0D0"><i class="fa fa-calendar-check-o"></i></font>
               </span>
               {% if theme.post_meta.item_text %}
@@ -101,17 +104,18 @@
               <span class="post-meta-divider">|</span>
             {% endif %}
               <span class="post-meta-item-icon">
-                <font color="red"><i class="fa fa-folder-o"></i></font>
+                <!-- 分类图标颜色 -->
+                <font color="#56b6e7"><i class="fa fa-folder-open"></i></font>
               </span>
               {% if theme.post_meta.item_text %}
                 <span class="post-meta-item-text">{{ __('post.in') }}</span>
               {% endif %}
               {% for cat in post.categories %}
-                <font color="black"><span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
-                    <span itemprop="name">{{ cat.name }}</span>
+                    <font color="#56b6e7"><span itemprop="name">{{ cat.name }}</span></font>
                   </a>
-                </span></font>
+                </span>
 
                 {% set cat_length = post.categories.length %}
                 {% if cat_length > 1 and loop.index !== cat_length %}
@@ -126,7 +130,7 @@
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
-                  <font color="green"><i class="fa fa-comments">&nbsp;评论数:</i></font>
+                  <i class="fa fa-comments">&nbsp;评论数:</i>
                 </span>
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
                   <span class="post-comments-count ds-thread-count" data-thread-key="{{ post.path }}" itemprop="commentCount"></span>
@@ -191,15 +195,7 @@
                 </a>
               </span>
             {% elseif theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o">&nbsp;评论数:</i>
-                </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-                </a>
-              </span>
+
             {% endif %}
           {% endif %}
 
@@ -208,12 +204,14 @@
              <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
+                 <!-- 阅读量图标颜色 -->
+                 <font color="red"><i class="fa fa-eye"></i></font>
                </span>
                {% if theme.post_meta.item_text %}
-                 <span class="post-meta-item-text">{{__('post.visitors')}}&#58;</span>
+                 <span class="post-meta-item-text">{{__('post.visitors')}}&#58;</span> 
                {% endif %}
-                 <span class="leancloud-visitors-count"></span>
+                 <font color="red"><span class="leancloud-visitors-count"></span>
+                 <span>℃</span></font>
              </span>
           {% endif %}
 
@@ -231,14 +229,15 @@
                   <span class="post-meta-divider">|</span>
                 {% endif %}
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
+                   <!-- 字数统计图标颜色 -->
+                  <font color="green"><i class="fa fa-file-word-o"></i></font>
                 </span>
                 {% if theme.post_wordcount.item_text %}
                   <span class="post-meta-item-text">{{ __('post.wordcount') }}&#58;</span>
                 {% endif %}
-                <span title="{{ __('post.wordcount') }}">
+                <font color="green"><span title="{{ __('post.wordcount') }}">
                   {{ wordcount(post.content) }}
-                </span>
+                </span></font>
               {% endif %}
 
               {% if theme.post_wordcount.wordcount and theme.post_wordcount.min2read %}
@@ -246,8 +245,9 @@
               {% endif %}
 
               {% if theme.post_wordcount.min2read %}
+               <!-- 阅读时长图标颜色 -->
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
+                  <font color="#333"><i class="fa fa-clock-o"></i></font>
                 </span>
                 {% if theme.post_wordcount.item_text %}
                   <span class="post-meta-item-text">{{ __('post.min2read') }} &asymp;</span>

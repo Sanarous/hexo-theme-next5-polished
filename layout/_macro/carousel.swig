@@ -5,10 +5,11 @@
 <style type="text/css">
 
 .glyphicon-chevron-left:before{
-	content: "《"
+	/*content: "<"*/
+	/*background: url(https://site-1258928558.cos.ap-guangzhou.myqcloud.com/left-icon-slides.png);*/
 }
 .glyphicon-chevron-right:before{
-	content: "》"
+	/*content: ">"*/
 }
 
 @media (max-width: 767px){
@@ -16,14 +17,15 @@
 		display: none;
 	}
 	.carousel{
-		width: 100% !important;
-		height: 100% !important;
+		display: none;
 	}
 	.slide{
 		width: 100% !important;
 		height: 100% !important;
 	}
-
+	.tag-cloud{
+		display: none;
+	}
 }
 
 .carousel{
@@ -37,6 +39,7 @@
   overflow: hidden;
   width: 100%;
 }
+
 .carousel-inner > .item {
   display: none;
   position: relative;
@@ -116,9 +119,9 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 15%;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  /*width: 15%;*/
+  /*opacity: 0.5;*/
+  /*filter: alpha(opacity=50);*/
   font-size: 20px;
   color: #fff;
   text-align: center;
@@ -134,7 +137,7 @@
 }
 .carousel-control.right {
   left: auto;
-  right: 0;
+  right: 0px;
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
@@ -146,8 +149,6 @@
   outline: 0;
   color: #fff;
   text-decoration: none;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
 }
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
@@ -159,15 +160,30 @@
   z-index: 5;
   display: inline-block;
 }
-.carousel-control .icon-prev,
+/*.carousel-control .icon-prev,
 .carousel-control .glyphicon-chevron-left {
-  left: 50%;
-  margin-left: -10px;
+  background: url('https://site-1258928558.cos.ap-guangzhou.myqcloud.com/icon-slides.png');
+  background-position-x: -83px; 
+  left: 9px;
+}*/
+
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left:hover {
+  background: url('https://site-1258928558.cos.ap-guangzhou.myqcloud.com/icon-slides.png');
+  left: 9px;
 }
-.carousel-control .icon-next,
+/*.carousel-control .icon-next,
 .carousel-control .glyphicon-chevron-right {
-  right: 50%;
-  margin-right: -10px;
+  background: url('https://site-1258928558.cos.ap-guangzhou.myqcloud.com/icon-slides.png');
+  background-position-x: -125px; 
+  right: 0px;
+}*/
+
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right:hover {
+  background: url('https://site-1258928558.cos.ap-guangzhou.myqcloud.com/icon-slides.png');
+  background-position-x: -41px; 
+  right: 0px;
 }
 .carousel-control .icon-prev,
 .carousel-control .icon-next {
@@ -176,15 +192,9 @@
   line-height: 1;
   font-family: serif;
 }
-.carousel-control .icon-prev:before {
-  content: '\2039';
-}
-.carousel-control .icon-next:before {
-  content: '\203a';
-}
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
+  bottom: 2px;
   left: 50%;
   z-index: 15;
   width: 60%;
@@ -195,20 +205,17 @@
 }
 .carousel-indicators li {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 1px;
+  width: 30px;
+  height: 3px;
+  margin: 5px;
   text-indent: -999px;
-  border: 1px solid #fff;
-  border-radius: 10px;
+  border: 1px solid #bbb;
   cursor: pointer;
-  background-color: #000 \9;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0,0,0,.24);
 }
 .carousel-indicators .active {
-  margin: 0;
-  width: 12px;
-  height: 12px;
+  width: 30px;
+  height: 3px;
   background-color: #fff;
 }
 .carousel-caption {
@@ -232,7 +239,7 @@
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
     width: 30px;
-    height: 30px;
+    height: 60px;
     margin-top: -10px;
     font-size: 30px;
   }
@@ -242,7 +249,7 @@
   }
   .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-next {
-    margin-right: -10px;
+    /*margin-right: -10px;*/
   }
   .carousel-caption {
     left: 20%;
@@ -250,7 +257,7 @@
     padding-bottom: 30px;
   }
   .carousel-indicators {
-    bottom: 20px;
+    bottom: 0px;
   }
 }
 </style>
@@ -275,18 +282,17 @@
 		
 	    	{% if act===0 %}
 				<a class="item active" href="{{ url_for(item.link) }}" target="_blank" style="height: 100%;">
-					<img src="{{item.img}}"   style="width: 100%; height: 100%" >
+					<img class="nofancybox" src="{{item.img}}"   style="width: 100%; height: 100%" >
 				</a>
 				{% set act = 1 %}
 				{% elseif act===1 %}
 					<a class="item" href="{{ url_for(item.link) }}" target="_blank" style="height: 100%;">
-						<img src="{{item.img}}"  style="width: 100%; height: 100%;" >
+						<img class="nofancybox" src="{{item.img}}"  style="width: 100%; height: 100%;" >
 					</a>
 			{% endif %}
 
 		{% endfor %}
 
-	 
 		</div>
 		<!-- 轮播（Carousel）导航 -->
 		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -298,33 +304,30 @@
 		</a>
 	</div>
 
-	<div  class="rights" style="width: 30%; height: 320px; margin-right: 0px;margin-left: 20px;float: left;">
+	<div  class="rights" style="width: 30%; height: 300px; margin-right: 0px;margin-left: 20px;float: left;">
 	
 	   <!-- 天气插件 -->
-       <iframe width="420" scrolling="no" height="15%" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&py=wuhan&num=2&site=12"></iframe>
+       <iframe class="blog-weather" width="420" scrolling="no" height="15%" frameborder="0" allowtransparency="true" src="https://i.tianqi.com/index.php?c=code&id=12&icon=1&py=wuhan&num=2&site=12"></iframe>
 
-	   <!-- 光影留念 -->
-	   <a href="/photos/" target="_blank" style="text-align: right; width: 100%;"><img src="https://blogimage-1258928558.cos.ap-guangzhou.myqcloud.com/%E8%BD%AE%E6%92%AD%E5%9B%BE/110604_meitu_1.jpg" width="100%"/></a>
+	   <!-- 关于博主 -->
+	   <a href="/about/"  target="_blank" style="text-align: right; width: 100%;"><img class="blog-about nofancybox" src="https://site-1258928558.cos.ap-guangzhou.myqcloud.com/about.png" width="100%"/></a>
 	   <div style="height: 9px;"></div>
 
 	   <!-- 推荐阅读 -->
-	   <a href="/books/" target="_blank" style="width: 100%; text-align: right;"><img src="https://blogimage-1258928558.cos.ap-guangzhou.myqcloud.com/%E8%BD%AE%E6%92%AD%E5%9B%BE/110605_meitu_2.jpg" width="100%"/></a>
+	   <a href="/books/" target="_blank" style="width: 100%; text-align: right;"><img  class="blog-read nofancybox" src="https://site-1258928558.cos.ap-guangzhou.myqcloud.com/read.png" width="100%"/></a>
 	   <div style="height: 9px;"></div>
 	
-	   <!-- 留下脚印 -->
-	  <a href="/messageboard/" target="_blank" style="width: 100%; text-align: right;"><img src="https://blogimage-1258928558.cos.ap-guangzhou.myqcloud.com/%E8%BD%AE%E6%92%AD%E5%9B%BE/jiaoyin_meitu_1_meitu_1.jpg" width="100%"/></a>
+	   <!-- 光影留念 -->
+	  <a href="/photos/" target="_blank" style="width: 100%; text-align: right;"><img class="blog-photo nofancybox" src="https://site-1258928558.cos.ap-guangzhou.myqcloud.com/photo.png" width="100%"/></a>
 	  <div style="height: 9px;"></div>
 
-	  <!-- 关于博主 -->
-	  <a href="/about/"><img src="https://blogimage-1258928558.cos.ap-guangzhou.myqcloud.com/%E8%BD%AE%E6%92%AD%E5%9B%BE/110607_meitu_3.jpg"/></a>
+	  <!-- 留下脚印 -->
+	  <a href="/messageboard/"><img class="blog-messageboard nofancybox" src="https://site-1258928558.cos.ap-guangzhou.myqcloud.com/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7_meitu_5.png"/></a>
     </div>
 
 <div class="tag-cloud">
-  <!-- <div class="tag-cloud-title">
-      {{ _p('counter.tag_cloud', site.tags.length) }}
-  </div> -->
   <div class="tag-cloud-tags" id="tags">
-    {{ tagcloud({min_font: 16, max_font: 16, amount: 300, color: true, start_color: '#fff', end_color: '#fff'}) }}
+    {{ tagcloud({min_font: 14, max_font: 14, amount: 300, color: true, start_color: '#fff', end_color: '#fff'}) }}
   </div>
 </div>
 <br>
@@ -342,34 +345,32 @@
 </script>
 
 <style type="text/css">
-    div#posts.posts-expand .tag-cloud a{
-   background-color: #f5f7f1;
-   border-radius: 6px;
-   padding-left: 10px;
-   padding-right: 10px;
-   margin-top: 18px;
+	div#posts.posts-expand .tag-cloud a{
+   		background-color: #f5f7f1;
+   		border-radius: 6px;
+   		padding-left: 10px;
+   		padding-right: 10px;
+   		margin-top: 18px;
+ 	}
 
- }
+ 	.tag-cloud a{
+   		background-color: #f5f7f1;
+   		border-radius: 4px;
+   		padding-right: 5px;
+   		padding-left: 5px;
+   		margin-right: 5px;
+   		margin-left: 0px;
+   		margin-top: 8px;
+   		margin-bottom: 0px;
+ 	}
 
- .tag-cloud a{
-   background-color: #f5f7f1;
-   border-radius: 4px;
-   padding-right: 5px;
-   padding-left: 5px;
-   margin-right: 5px;
-   margin-left: 0px;
-   margin-top: 8px;
-   margin-bottom: 0px;
+ 	.tag-cloud a:before{
+       content: "🔖";
+ 	}
 
- }
-
- .tag-cloud a:before{
-      content: "🔖";
- }
-
- .tag-cloud-tags{
-   text-align: left;
-   counter-reset: tags;
- }
+ 	.tag-cloud-tags{
+   	   text-align: left;
+   	   counter-reset: tags;
+ 	}
 </style>
 {% endif %}

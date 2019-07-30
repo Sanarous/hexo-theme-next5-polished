@@ -2,10 +2,14 @@
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
   {% block title %}{#
-  #}{% set page_title_suffix = ' | ' + config.title %}{#
+  #}{% set page_title_suffix = ' - ' + 'Sanarous的博客' %}{#
 
   #}{% if page.type === "categories" and not page.title %}{#
     #}{{ __('title.category') + page_title_suffix }}{#
+  #}{% elif page.type === 'links' and not page.title %}{#
+    #}{{ __('title.links') + page_title_suffix }}{#
+  #}{% elif page.type === 'books' and not page.title %}{#
+    #}{{ __('title.books') + page_title_suffix }}{#
   #}{% elif page.type === "tags" and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
   #}{% else %}{#
@@ -92,6 +96,8 @@
               {{ list_categories() }}
             </div>
           </div>
+		  {% elif page.type === 'links' %}
+  			  {% include 'links.swig' %}
         {% else %}
           {{ page.content }}
         {% endif %}

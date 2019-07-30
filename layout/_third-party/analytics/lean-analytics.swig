@@ -2,6 +2,7 @@
 
   {# custom analytics part create by xiamo #}
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <!-- <script src="https://dp2px.com/demo/av-min.js"></script> -->
   <script>AV.initialize("{{theme.leancloud_visitors.app_id}}", "{{theme.leancloud_visitors.app_key}}");</script>
   <script>
     function showTime(Counter) {

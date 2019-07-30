@@ -4,6 +4,7 @@
 
 {% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
+
 {% block page_class %}
   {% if is_home() %}page-home{% endif -%}
 {% endblock %}

@@ -3,6 +3,7 @@ title:
   category: 分类
   tag: 标签
   schedule: 日程表
+  books: 推荐阅读
 
 author: 博主
 
@@ -17,9 +18,10 @@ menu:
   sitemap: 站点地图
   commonweal: 公益404
   messageboard: 留言
-  books: 阅读
+  books: 推荐阅读
   photots: 光影流年
   top: 热门
+  links: 友链
 
 sidebar:
   overview: 站点概览
@@ -34,10 +36,11 @@ post:
   read_more: 阅读全文
   untitled: 未命名
   toc_empty: 此文章未包含目录
-  visitors: 阅读次数
-  wordcount: 字数统计
+  visitors: 热度
+  wordcount: 字数
   min2read: 阅读时长
   totalcount: 全站总字数
+  comments: 评论数
   copy_button: 复制
   copy_success: 复制成功
   copy_failure: 复制失败

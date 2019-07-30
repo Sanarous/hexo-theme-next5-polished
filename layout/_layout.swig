@@ -8,17 +8,27 @@
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   <meta name="google-site-verification" content="-YPbgjltFVFljoCm04Ktk0m38A8CkQxpifuKVZXtawA" />
+  <mate name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
   {% include '_third-party/analytics/index.swig' %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139884627-1"></script>
-  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=66410872" charset="UTF-8"></script>
+  <link rel="stylesheet" href="/dist/css/share.min.css">
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-139884627-1');
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?9d4a3700a4e6444240fe13acb69c87fc";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
   </script>
 </head>
 
@@ -101,9 +111,8 @@
   {% include '_third-party/copy-code.swig' %}
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
-  <script type="text/javascript" src="/js/src/image.js"></script>
   <script type="text/javascript" src="/js/src/linkcard.js"></script>
-  <script type="text/javascript" src="/js/src/clicksocialvalue.js"></script>
-  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="/dist/js/social-share.min.js"></script>
 </body>
 </html>

@@ -12,8 +12,9 @@
     <div class="custom-logo-site-title">
       <a href="{{ config.root }}"  class="brand" rel="start">
         <!-- <span class="logo-line-before"><i></i></span> -->
-        <!-- <span class="site-title">{{ config.title }}</span> -->
-	     <img src="/images/logo5.png" />
+        <!-- <img width="150px" height="auto" src="https://site-1258928558.cos.ap-guangzhou.myqcloud.com/logo-bestzuo.png"/> -->
+        <span class="site-title">{{ config.title }}</span>
+	     <!-- <img width="150px" height="auto" src="/images/site-logo.png" /> -->
         <!-- <span class="logo-line-after"><i></i></span> -->
       </a>
     </div>
