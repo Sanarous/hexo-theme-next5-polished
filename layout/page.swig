@@ -2,7 +2,7 @@
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
   {% block title %}{#
-  #}{% set page_title_suffix = ' - ' + 'Sanarous的博客' %}{#
+  #}{% set page_title_suffix = ' - ' + {{ config.author }} + '的博客' %}{#
 
   #}{% if page.type === "categories" and not page.title %}{#
     #}{{ __('title.category') + page_title_suffix }}{#
